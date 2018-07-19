@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class EnemyHealthManager : MonoBehaviour {
 
-	public int enemyHealth;
+	public int enemyHealth; //How much health the enemy has
 
-	public GameObject deathEffect;
+	public GameObject deathEffect; //What Gameobject it plays when the enemy is dead
 
-	public int pointsOnDeath;
+	public int pointsOnDeath; //Adds points for when player defeats enemy
 
 	// Use this for initialization
 	void Start () {

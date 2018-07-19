@@ -23,4 +23,6 @@ public class DestroyedFinishedParticle : MonoBehaviour {
 	{
 		Destroy (gameObject);
 	}
+
+	//NOTE: Keep this for now as I dunno if we need it to function. I want to be able to add our own death graphics in.
 }

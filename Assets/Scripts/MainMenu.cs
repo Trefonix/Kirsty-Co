@@ -15,12 +15,14 @@ public class MainMenu : MonoBehaviour {
 	public void NewGame()
 	{
 		PlayerPrefs.SetInt ("PlayerCurrentLives", playerLives);
-
+		//Remebers Players Lives and makes new lives
 		PlayerPrefs.SetInt ("CurrentScore", 0);
-
+		//Remembers CurrentScore and sets the score at 0
 
 		PlayerPrefs.SetInt (Level1Tag, 1);
+		//Goes to first level
 		Application.LoadLevel (startLevel);
+		//Loads First Level Scene
 	}
 
 	public void LevelSelect()
@@ -29,11 +31,12 @@ public class MainMenu : MonoBehaviour {
 		PlayerPrefs.SetInt ("CurrentScore", 0);
 		PlayerPrefs.SetInt (Level1Tag, 1);
 		Application.LoadLevel (levelSelect);
+		//Same as above but goes to Level Select Scene
 	}
 
 	public void QuitGame()
 	{
-		Debug.Log ("Game Exited");
 		Application.Quit ();
+		//Quits the whole game
 	}
 }

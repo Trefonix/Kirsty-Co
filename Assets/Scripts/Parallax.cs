@@ -7,15 +7,15 @@ public class Parallax : MonoBehaviour {
 
 	//Be aware there might be a bug in this
 
-	public Transform[] backgrounds;
+	public Transform[] backgrounds; //Gives an array of backgrounds within the parallax
 
-	private float[] parallaxScales;
+	private float[] parallaxScales; //The value of speed of the backgrounds; finding it by scale 
 
-	public float smoothing;
+	public float smoothing; //Trys to keep up with the player
 
-	private Transform cam;
+	private Transform cam; //Stay's with the cam
 
-	private Vector2 previousCamPos;
+	private Vector2 previousCamPos; //Previous Camara position
 
 	// Use this for initialization
 	void Start () {

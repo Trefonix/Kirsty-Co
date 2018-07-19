@@ -5,7 +5,7 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour {
 
 
-	public static int score;
+	public static int score; //Creates a Score value to store
 
 	Text text;
 
@@ -13,7 +13,6 @@ public class ScoreManager : MonoBehaviour {
 	{
 		text = GetComponent<Text> ();
 
-		//score = 0;
 
 		score = PlayerPrefs.GetInt ("CurrentScore");
 	}
@@ -22,6 +21,7 @@ public class ScoreManager : MonoBehaviour {
 	{
 		if (score < 0)
 			score = 0;
+		//If Score is lower than 0 then score is 0
 
 		text.text = "" + score;
 

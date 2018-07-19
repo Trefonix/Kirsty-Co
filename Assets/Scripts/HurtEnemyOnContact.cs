@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HurtEnemyOnContact : MonoBehaviour {
 
-	public int damageToGive;
+	public int damageToGive; //Value of player's damage to enemy
 
 
 
@@ -22,5 +22,6 @@ public class HurtEnemyOnContact : MonoBehaviour {
 	{
 		if (other.tag == "Enemy")
 			other.GetComponent<EnemyHealthManager> ().giveDamage(damageToGive);
+		//If this script hits enemy then enemy takes damage
 	}
 }

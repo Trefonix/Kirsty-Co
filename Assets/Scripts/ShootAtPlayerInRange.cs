@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class ShootAtPlayerInRange : MonoBehaviour {
 
-	public float playerRange;
+	public float playerRange; //value of how far the enemy can see the player
 
-	public GameObject enemyFire;
+	public GameObject enemyFire; // Locates the enemies projectile object
 
-	public PlayerController player;
+	public PlayerController player; //Links Player Controller script
 
-	public Transform launchPoint;
+	public Transform launchPoint; //Links an empty game Object for the enemy to fire from
 
-	public float waitBetweenShots;
+	public float waitBetweenShots; //Delays the enemy's shots so its not constantly firing
 
-	private float shotCounter;
+	private float shotCounter; //Shot Delay Time value??
 
 
 	// Use this for initialization

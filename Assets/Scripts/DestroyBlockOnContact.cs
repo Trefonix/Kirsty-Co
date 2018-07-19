@@ -18,7 +18,7 @@ public class DestroyBlockOnContact : MonoBehaviour {
 		if (other.tag == "Ground"){
 
 			Destroy (other.gameObject);
-
+			// If this hits the ground layer then game object will be destroyed
 	}
 }
 }

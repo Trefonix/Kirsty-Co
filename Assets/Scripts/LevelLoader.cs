@@ -43,4 +43,5 @@ public class LevelLoader : MonoBehaviour {
 			playerInZone = false;
 		}
 	}
+	//NOTE: This script should be deleted because its is an old tutorial concept and was for learning purposes only
 }

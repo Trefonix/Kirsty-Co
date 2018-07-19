@@ -4,34 +4,34 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
 
-	public float jumpHeight;
+	public float jumpHeight; //A variable to check Jump height
 
-	public Transform groundCheck;
+	public Transform groundCheck; //A variable to check if player hits ground
 	public float groundCheckRadius;
 	public LayerMask whatIsGround;
 
-	private Rigidbody2D rigi;
-	public bool grounded;
+	private Rigidbody2D rigi; // An instance name for the rigidbody component
+	public bool grounded; //
 
-	public GameObject projectile;
-	public Transform firepoint;
-	public Transform firepointSideUp;
-	public Transform firepointUp;
-	public Transform firepointSideDown;
-	public bool flipped;
-	public float moveVelocity;
-	public float moveSpeed;
-	public bool dirKeys;
-	public bool doubleJumped;
+	public GameObject projectile; // To look for the projectile game object
+	public Transform firepoint;	// A invisable object to tell where the player will shoot at the side
+	public Transform firepointSideUp; // Same as above but Side Up
+	public Transform firepointUp; //""
+	public Transform firepointSideDown; //""
+	public bool flipped; // A bool to tell if it has flipped and therefore need to change motion for shot to go other way
+	public float moveVelocity; // Velocity of the player
+	public float moveSpeed; // Speed of the player
+	public bool dirKeys; //Tells us we are hitting Direction Keys for Left and Right
+	public bool doubleJumped; //A bool to tell if a double jump can or cannot be done
 
-	public bool shooting;
-	public bool shotDelay;
-	public bool lookingUp;
-	public bool lookingDown;
-	public float knockback;
-	public float knockbackCount;
-	public float knockbackLength;
-	public bool knockFromRight;
+	public bool shooting; // Bool for shooting Animation
+	public bool shotDelay; //A variable to say if finished the shot or not
+	public bool lookingUp; //Bool for shooting Animation for side up
+	public bool lookingDown; //Bool for shooting Animation for down
+	public float knockback; //Knockback how far
+	public float knockbackCount; //Knockback Timer for how long they are knocked back for
+	public float knockbackLength; //?????
+	public bool knockFromRight; //If knocked back on Left or Right
 
 
 	private Animator anim;
@@ -84,12 +84,16 @@ public class PlayerController : MonoBehaviour {
 
 		if (knockbackCount <= 0) {
 			GetComponent<Rigidbody2D> ().velocity = new Vector2 (moveVelocity, GetComponent<Rigidbody2D> ().velocity.y);
+			//If knockbackCount = 0 then tell physics to give control to the player again
 		} else {
 			if (knockFromRight)
 				GetComponent<Rigidbody2D> ().velocity = new Vector2 (-knockback, knockback);
+			// I belive this means the value of the knockback it give the X and Y axis on player when hit
 			if (!knockFromRight)
 				GetComponent<Rigidbody2D> ().velocity = new Vector2 (knockback, knockback);
+			// Same but for left side
 			knockbackCount -= Time.deltaTime;
+			// Counts down to knockback Count
 		}
 		//This is the knockback code
 

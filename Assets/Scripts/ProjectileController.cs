@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class ProjectileController : MonoBehaviour {
 
-	public float xspeed = 0f;
-	public float yspeed = 0f;
+	public float xspeed = 0f; //Gives a value of where the projectile is located on the screen in the X axis
+	public float yspeed = 0f; //Same but Y axis
 
-	public int damageToGive;
+	public int damageToGive; //How much this object gives dameage to the player
 
-	public GameObject enemyDeathEffect;
 
 	public GameObject impactEffect;
 
@@ -27,9 +26,6 @@ public class ProjectileController : MonoBehaviour {
 	{
 		if (other.tag == "Enemy") 
 		{
-			//Instantiate (enemyDeathEffect, other.transform.position, other.transform.rotation);
-			//Destroy (other.gameObject);
-			//ScoreManager.AddPoints (pointsForKill);
 
 			other.GetComponent<EnemyHealthManager> ().giveDamage (damageToGive);
 		}
